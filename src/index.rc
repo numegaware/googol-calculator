@@ -1,0 +1,226 @@
+1 24 "c.xml"
+#define WS_SYSMENU 			0x00080000L
+#define WS_MINIMIZEBOX 		0x00020000L
+#define WS_MAXIMIZEBOX 		0x00010000L
+
+#define IDI_ICON1 			100
+// #define IDI_ICON2 			101
+#define ES_READONLY			0x0800L
+#define ES_AUTOVSCROLL 		0x0040L			//������������� ���������� ����� ������ �� 10 ��������, ����� ������������ �������� ������� ������ � ����� ������ �����. ��� ������� ������������� ������� <Enter> ����� ������������� ��������� � ������ ������.
+//ES_AUTOVSCROLL							//������������� ���������� ����� ���� �� ���� ��������, ����� ������������ �������� ������� <Enter> �� ��������� ������.
+// #define ES_LEFT 			0x0000L			//����� � ���� �������������� ������ � ������ ����
+
+//---for menu----
+#define WS_POPUP			0x80000000L
+#define WS_CAPTION			0x00C00000L
+//---//for menu end----
+
+
+#define SS_RIGHT			0x00000002L
+#define WS_EX_RIGHT 		0x00001000L 
+#define WS_EX_RTLREADING 	0x00002000L 
+
+#define WS_CHILD 			0x40000000L		//����� ���� �������� � ����
+#define WS_VISIBLE 			0x10000000L		//�������� ������ ���� ���������� ��������
+#define WS_DISABLED 		0x08000000L		//
+#define WS_BORDER 			0x00800000		//������ ������ ��������
+#define WS_TABSTOP 			0x00010000L		//��� ������ <TAB> ����� �� ������� ������������ ��������
+#define SS_LEFT 			0x00000000L		//������� ������ � ������ ���� ����������� ����
+#define BS_PUSHBUTTON		0x00000000L		//����� ������
+#define BS_CENTER 			0x00000300L		//������������ ����� �� ������
+#define DS_LOCALEDIT		0x20L
+#define WS_EX_CLIENTEDGE	0x00000200L 
+
+
+
+#define WS_VSCROLL 			0x00200000L
+#define WS_HSCROLL 			0x00100000L 
+#define WS_THICKFRAME 		0x00040000L
+#define LBS_NOTIFY 			0x0001L
+#define LBS_SORT 			0x0002L
+#define LBS_WANTKEYBOARDINPUT 0x0400L
+// #define LBS_RIGHT 0x0002L
+
+//��������������
+#define LIST1 101
+#define LIST2 102
+// #define IDI_ICON1 3
+
+
+//����������� ������
+IDI_ICON1 ICON "assets/icon/icon1.ico"
+// IDI_ICON2 ICON "icon2.ico"
+
+//����������� ����������� ����
+DIAL1 DIALOG 150,60, 482, 308//�,�,�,�
+STYLE WS_SYSMENU|WS_MINIMIZEBOX//|WS_MAXIMIZEBOX
+CAPTION "calculator v8"
+FONT 8, "Arial"
+//BLOCK "keyBoard",170, 233, 14, 29 
+{																			//�,�,�,�
+   CONTROL "+", 6, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 170, 233, 14, 29 
+   CONTROL "-", 10, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 170, 218, 14, 14 
+   CONTROL "x", 11, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 155, 218, 14, 14 
+   CONTROL "/", 12, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 141, 218, 14, 14 
+   CONTROL "=", 17, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 170, 262, 14, 29 
+   CONTROL "+/-", 18, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 126, 218, 14, 14 
+   CONTROL "0", 19, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 126, 277, 29, 14 
+   CONTROL ".", 20, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 155, 277, 14, 14 // | WS_DISABLED
+   CONTROL "1", 21, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 126, 262, 14, 14 
+   CONTROL "2", 22, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 141, 262, 14, 14 
+   CONTROL "3", 23, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 155, 262, 14, 14 
+   CONTROL "4", 24, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 126, 247, 14, 14 
+   CONTROL "5", 25, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 141, 247, 14, 14 
+   CONTROL "6", 26, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 155, 247, 14, 14 
+   CONTROL "7", 27, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 126, 233, 14, 14 
+   CONTROL "8", 28, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 141, 233, 14, 14 
+   CONTROL "9", 29, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 155, 233, 14, 14 
+   CONTROL "<", 30, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 114, 218, 9, 14 
+   CONTROL "x", 31, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 114, 233, 9, 13
+   CONTROL "^", 32, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 114, 247, 9, 13// | WS_DISABLED
+   
+
+ // CONTROL "bspace", 30, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 87, 261, 28, 14 
+   // CONTROL "ce", 31, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 87, 276, 28, 14 
+   CONTROL "0", 8, EDIT, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP | WS_DISABLED, 19, 206, 460, 11 
+   CONTROL "", 14, EDIT,  ES_READONLY | WS_CHILD | WS_VISIBLE | WS_DISABLED, 12, 206, 7, 9 //ES_LEFT |
+   CONTROL "ListBox2", LIST2,"listbox", WS_VISIBLE | WS_CHILD | WS_VSCROLL | WS_HSCROLL | WS_BORDER | LBS_WANTKEYBOARDINPUT , 1, 1, 478, 211//,1,1,477,201 | ES_AUTOVSCROLL
+}
+
+1 VERSIONINFO
+FILEVERSION 8,0,0,0
+PRODUCTVERSION 8,0,0,0
+FILEOS 0x40004
+FILETYPE 0x2
+{
+BLOCK "StringFileInfo"
+{
+	BLOCK "041904B0"
+	{
+		VALUE "CompanyName", "GOOGOLCALCULATOR Team :)"
+		VALUE "FileDescription", "����������� ��� Windows"
+		VALUE "FileVersion", "8.0.11"
+		VALUE "InternalName", "CALCULATOR V8"
+		VALUE "LegalCopyright", "� GOOGOLCALCULATOR. ��� ����� ��������."
+		VALUE "OriginalFilename", "C.exe"
+		VALUE "ProductName", "GOOGOLCALCULATOR� ����� �����������"
+		VALUE "ProductVersion", "8.0"
+		VALUE "LastMod", "31dec2014"
+	}
+}
+
+// STRINGTABLE
+// LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+// {
+// 103, 	"WinLauncher"
+// 104, 	"IDEA_JDK"
+// 105, 	"%USERPROFILE%\\.IntelliJIdea14\\idea.vmoptions"
+// 106, 	"com/intellij/idea/Main"
+// 107, 	"bootstrap.jar;extensions.jar;util.jar;jdom.jar;log4j.jar;trove4j.jar;jna.jar"
+// 108, 	"true"
+// 109, 	"WINLAUNCHER"
+// 110, 	"com/intellij/ide/WindowsCommandLineProcessor"
+// 111, 	"boot.jar"
+// }
+
+
+BLOCK "VarFileInfo"
+{
+	VALUE "Translation", 0x0419 0x04B0
+}
+}
+MENUP MENU
+{
+	POPUP "&File"
+	{
+		MENUITEM "&Save", 101, GRAYED
+		MENUITEM "E&xit", 107
+	
+	}
+	POPUP"Set"
+	{
+		MENUITEM "HEX", 110, GRAYED
+		MENUITEM "DEC", 110, GRAYED
+		POPUP "��������� ������"
+		{
+			MENUITEM "���������� �����", 110, GRAYED
+			MENUITEM "������� �����", 110, GRAYED
+		}		
+		POPUP "Set Digit"
+		{
+			MENUITEM "3 digit after dot", 110, GRAYED
+			MENUITEM "32 digit after dot", 110, GRAYED
+			MENUITEM "googol digit after dot", 110, GRAYED
+			MENUITEM "max digit after dot", 110, GRAYED
+		}
+	}
+	POPUP"W&in"
+	{
+		MENUITEM "calculator mini", 109
+		MENUITEM "Stndt", 103, GRAYED
+		MENUITEM "WidthUp", 104, GRAYED
+		POPUP "Show"
+		{
+			MENUITEM "HEX Window", 106, GRAYED
+			MENUITEM "STAT Window", 106, GRAYED
+			
+		}
+	}
+	POPUP "?"
+	{
+	MENUITEM "Help contents", 108, GRAYED
+	MENUITEM SEPARATOR
+	MENUITEM "calculator v8 Home", 106, GRAYED
+	MENUITEM SEPARATOR
+	MENUITEM "About", 105
+	}
+}
+
+
+DIAL2 DIALOGEX 180,90,80,112
+ STYLE WS_MINIMIZEBOX | WS_MAXIMIZEBOX|WS_SYSMENU	//WS_POPUPWINDOW//DS_SETFONT | DS_FIXEDSYS | 
+//LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+// CAPTION "calculator"
+FONT 8, "Arial"
+{
+ //EDITTEXT   "", 1706, 150, 2, 150, 10, NOT WS_BORDER | ES_READONLY
+  //CONTROL "", 101, "STATIC", NOT WS_GROUP | SS_BLACKRECT | SS_GRAYFRAME, 20, 5, 64, 64
+ // LTEXT   "Simple calculator v7.4", -1, 70, 20, 70, 11
+ // LTEXT   "(UNICODE)", -1, 145, 20, 65, 11
+ // LTEXT   "Author :", -1, 21, 45, 31, 8
+  // LTEXT   "Simple calculator team", 1705, 78, 45, 70, 8
+  // LTEXT   "Home Page :", -1, 21, 59, 47, 8
+  // LTEXT   "http://s-adam.com/", 1702, 78, 59, 126, 8
+  // GROUPBOX   "GNU General Public Licence", -1, 19, 75, 201, 131, BS_CENTER
+  // DEFPUSHBUTTON   "OK", 1, 106, 215, 50, 14//, BS_FLAT, WS_EX_STATICEDGE
+  // EDITTEXT   "", 1701, 31, 99, 209, 96//,// NOT WS_BORDER | ES_MULTILINE | ES_AUTOVSCROLL | ES_READONLY | WS_VSCROLL
+   // CONTROL "GNU General Public Licence", -1, BUTTON, BS_GROUPBOX | BS_CENTER | WS_CHILD | WS_VISIBLE, 19, 67, 201, 97 
+   // CONTROL "OK", 1, BUTTON, BS_DEFPUSHBUTTON | WS_CHILD | WS_VISIBLE | WS_TABSTOP, 106, 177, 50, 14 
+   CONTROL "0", 8, EDIT, SS_RIGHT | WS_CHILD | WS_VISIBLE | WS_BORDER | WS_TABSTOP, 15, 2, 60, 13 
+   CONTROL "+", 6, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 62, 33, 14, 29 
+   CONTROL "-", 10, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 62, 18, 14, 14 
+   CONTROL "x", 11, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 47, 18, 14, 14 
+   CONTROL "/", 12, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 31, 18, 14, 14 
+   CONTROL "=", 17, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 62, 62, 14, 29 
+   CONTROL "+/-", 18, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 16, 18, 14, 14 
+   CONTROL "0", 19, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 16, 77, 29, 14 
+   CONTROL ".", 20, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 47, 77, 14, 14 //| WS_DISABLED
+   CONTROL "1", 21, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 16, 62, 14, 14 
+   CONTROL "2", 22, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 31, 62, 14, 14 
+   CONTROL "3", 23, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 47, 62, 14, 14 
+   CONTROL "4", 24, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 16, 47, 14, 14 
+   CONTROL "5", 25, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 31, 47, 14, 14 
+   CONTROL "6", 26, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 47, 47, 14, 14 
+   CONTROL "7", 27, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 16, 33, 14, 14 
+   CONTROL "8", 28, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 31, 33, 14, 14 
+   CONTROL "9", 29, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 47, 33, 14, 14 
+    CONTROL "<", 30, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 1, 18, 9, 14 
+   CONTROL "c", 31, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 1, 33, 9, 13
+
+ // CONTROL "bspace", 30, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 87, 261, 28, 14 
+   // CONTROL "ce", 31, BUTTON, BS_PUSHBUTTON | BS_CENTER | WS_CHILD | WS_VISIBLE, 87, 276, 28, 14 
+   CONTROL "", 14, EDIT,  ES_READONLY | WS_CHILD | WS_VISIBLE, 6, 5, 7, 9 //ES_LEFT |
+  }
+
+
+
