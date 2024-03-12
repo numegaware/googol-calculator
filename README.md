@@ -1,4 +1,4 @@
-# Googole Calculator
+# Googolplex Calculator
 ##### version 8
 <br>
 <div align="crenter">
